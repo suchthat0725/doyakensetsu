@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>施工実績 | 銅谷建設株式会社</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Montserrat:wght@300;400;600;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --color-bg: #ffffff;
+      --color-surface: #f4f7fb;
+      --color-surface2: #eaf0f8;
+      --color-border: rgba(0,0,0,0.08);
+      --color-primary: #1a5fb8;
+      --color-primary-light: #2470d4;
+      --color-text: #1a2433;
+      --color-text-sub: #5a6a80;
+      --color-accent: #0ea5e9;
+      --font-ja: 'Noto Sans JP', sans-serif;
+      --font-en: 'Montserrat', sans-serif;
+      --radius: 12px;
+      --transition: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--color-bg); color: var(--color-text); font-family: var(--font-ja); line-height: 1.7; overflow-x: hidden; }
+
+    /* HEADER */
+    header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 0 48px; height: 72px;
+      display: flex; align-items: center; justify-content: space-between;
+      background: rgba(255,255,255,0.95); backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--color-border);
+      box-shadow: 0 1px 20px rgba(0,0,0,0.06);
+    }
+    .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .logo-mark { width: 40px; height: 40px; background: var(--color-primary); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-family: var(--font-en); font-weight: 900; font-size: 18px; color: #fff; }
+    .logo-text .ja { font-size: 15px; font-weight: 700; color: var(--color-text); display: block; }
+    .logo-text .en { font-size: 10px; font-family: var(--font-en); color: var(--color-text-sub); letter-spacing: 0.15em; text-transform: uppercase; display: block; }
+    nav { display: flex; align-items: center; gap: 32px; }
+    nav a { font-size: 12px; font-family: var(--font-en); font-weight: 600; color: #5a6a80; text-decoration: none; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s; }
+    nav a:hover, nav a.active { color: var(--color-primary); }
+    .header-cta { background: var(--color-primary); color: #fff !important; padding: 10px 22px; border-radius: 6px; }
+    .header-cta:hover { background: var(--color-primary-light) !important; }
+
+    /* PAGE HERO */
+    .page-hero {
+      margin-top: 72px;
+      background: linear-gradient(135deg, #1a5fb8 0%, #0ea5e9 100%);
+      padding: 72px 48px;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero::before {
+      content: 'WORKS';
+      position: absolute; right: -10px; top: 50%; transform: translateY(-50%);
+      font-family: var(--font-en); font-size: 160px; font-weight: 900;
+      color: rgba(255,255,255,0.05); white-space: nowrap; pointer-events: none;
+    }
+    .page-hero-inner { max-width: 1200px; margin: 0 auto; position: relative; z-index: 1; }
+    .breadcrumb { display: flex; align-items: center; gap: 8px; margin-bottom: 20px; }
+    .breadcrumb a { font-size: 12px; color: rgba(255,255,255,0.6); text-decoration: none; font-family: var(--font-en); letter-spacing: 0.05em; }
+    .breadcrumb a:hover { color: #fff; }
+    .breadcrumb span { font-size: 12px; color: rgba(255,255,255,0.4); }
+    .page-hero h1 { font-size: clamp(28px, 4vw, 52px); font-weight: 900; color: #fff; line-height: 1.15; margin-bottom: 12px; }
+    .page-hero-en { font-family: var(--font-en); font-size: 13px; font-weight: 400; color: rgba(255,255,255,0.5); letter-spacing: 0.2em; text-transform: uppercase; }
+
+    /* MAIN */
+    main { max-width: 1200px; margin: 0 auto; padding: 64px 48px 120px; }
+
+    /* FILTER BAR */
+    .filter-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--color-border);
+    }
+    .filter-group { display: flex; gap: 8px; flex-wrap: wrap; }
+    .filter-btn {
+      padding: 8px 18px; border-radius: 100px;
+      border: 1px solid var(--color-border); background: transparent;
+      font-size: 13px; font-weight: 500; font-family: var(--font-ja);
+      color: var(--color-text-sub); cursor: pointer; transition: all 0.2s;
+    }
+    .filter-btn.active, .filter-btn:hover { background: var(--color-primary); color: #fff; border-color: var(--color-primary); }
+
+    .result-count { font-size: 13px; color: var(--color-text-sub); white-space: nowrap; }
+    .result-count strong { color: var(--color-primary); font-size: 18px; font-family: var(--font-en); font-weight: 700; }
+
+    /* WORKS GRID */
+    .works-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .work-card {
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--color-border);
+      background: #fff;
+      transition: var(--transition);
+      text-decoration: none;
+      color: var(--color-text);
+      display: block;
+    }
+    .work-card:hover { transform: translateY(-6px); box-shadow: 0 20px 60px rgba(26,95,184,0.12); border-color: rgba(26,95,184,0.2); }
+
+    .work-img {
+      width: 100%; aspect-ratio: 4/3;
+      background-size: cover; background-position: center;
+      position: relative;
+    }
+    .work-img::after {
+      content: ''; position: absolute;
+      bottom: 0; left: 0; right: 0; height: 50%;
+      background: linear-gradient(to top, rgba(15,30,60,0.5), transparent);
+    }
+    .work-cat {
+      position: absolute; top: 14px; left: 14px; z-index: 1;
+      background: var(--color-primary); color: #fff;
+      font-size: 10px; font-weight: 700; font-family: var(--font-en);
+      letter-spacing: 0.1em; padding: 4px 10px; border-radius: 4px;
+    }
+    .work-year {
+      position: absolute; top: 14px; right: 14px; z-index: 1;
+      background: rgba(255,255,255,0.15); backdrop-filter: blur(4px);
+      color: #fff; font-size: 11px; font-family: var(--font-en); font-weight: 600;
+      padding: 4px 10px; border-radius: 4px;
+    }
+
+    .work-info { padding: 20px 22px 24px; }
+    .work-name { font-size: 15px; font-weight: 700; margin-bottom: 10px; line-height: 1.4; }
+    .work-meta { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 12px; }
+    .work-meta-item { display: flex; align-items: center; gap: 5px; font-size: 12px; color: var(--color-text-sub); }
+    .work-desc { font-size: 13px; color: var(--color-text-sub); line-height: 1.7; font-weight: 300; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+
+    .work-card-footer {
+      padding: 12px 22px;
+      border-top: 1px solid var(--color-border);
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .work-link-text { font-size: 12px; font-weight: 600; font-family: var(--font-en); letter-spacing: 0.08em; color: var(--color-primary); text-transform: uppercase; }
+    .work-link-arrow { color: var(--color-primary); font-size: 14px; }
+
+    /* PAGINATION */
+    .pagination { display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 64px; }
+    .page-btn {
+      width: 40px; height: 40px; border-radius: 8px;
+      border: 1px solid var(--color-border); background: transparent;
+      font-size: 14px; font-family: var(--font-en); font-weight: 600;
+      color: var(--color-text-sub); cursor: pointer; transition: all 0.2s;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .page-btn.active { background: var(--color-primary); color: #fff; border-color: var(--color-primary); }
+    .page-btn:hover:not(.active) { border-color: var(--color-primary); color: var(--color-primary); }
+    .page-dots { color: var(--color-text-sub); padding: 0 4px; }
+
+    /* FADE */
+    .fade-in { opacity: 0; transform: translateY(16px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    /* FOOTER */
+    footer { background: #0f1e35; padding: 60px 48px 40px; border-top: 1px solid rgba(255,255,255,0.05); }
+    .footer-inner { max-width: 1200px; margin: 0 auto; }
+    .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,0.07); margin-bottom: 32px; }
+    .footer-brand .logo { margin-bottom: 16px; }
+    .footer-brand .logo .ja { color: #ffffff; }
+    .footer-brand .logo .en { color: #8ab0cc; }
+    .footer-tagline { font-size: 13px; color: #8ab0cc; line-height: 1.8; font-weight: 300; }
+    .footer-col-title { font-size: 11px; font-family: var(--font-en); font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: #8ab0cc; margin-bottom: 16px; }
+    .footer-links { display: flex; flex-direction: column; gap: 10px; }
+    .footer-links a { font-size: 13px; color: #8ab0cc; text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: #7dd3fc; }
+    .footer-bottom { display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: #3a5570; }
+    @media (max-width: 900px) { .footer-top { grid-template-columns: 1fr 1fr; } }
+
+    @media (max-width: 900px) {
+      header { padding: 0 20px; }
+      nav { display: none; }
+      .page-hero { padding: 48px 20px; }
+      main { padding: 40px 20px 80px; }
+      .works-grid { grid-template-columns: 1fr; }
+    }
+    @media (min-width: 901px) and (max-width: 1100px) {
+      .works-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="logo">
+    <div class="logo-mark">銅</div>
+    <div class="logo-text">
+      <span class="ja">銅谷建設株式会社</span>
+      <span class="en">Douya Kensetsu Co., Ltd.</span>
+    </div>
+  </a>
+  <nav>
+    <a href="index.html#strengths">強み</a>
+    <a href="works.html" class="active">施工実績</a>
+    <a href="index.html#services">事業内容</a>
+    <a href="news.html">ニュース</a>
+    <a href="index.html#about">会社概要</a>
+    <a href="index.html#recruit">採用</a>
+    <a href="index.html#contact" class="header-cta">お問い合わせ</a>
+  </nav>
+</header>
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span>/</span>
+      <span style="color:rgba(255,255,255,0.8)">施工実績</span>
+    </div>
+    <h1>施工実績</h1>
+    <div class="page-hero-en">Works &amp; Projects</div>
+  </div>
+</div>
+
+<main>
+  <div class="filter-bar fade-in">
+    <div class="filter-group">
+      <button class="filter-btn active" data-filter="all">すべて</button>
+      <button class="filter-btn" data-filter="architecture">建築工事</button>
+      <button class="filter-btn" data-filter="civil">土木工事</button>
+      <button class="filter-btn" data-filter="formwork">型枠工事</button>
+      <button class="filter-btn" data-filter="renovation">改修・リニューアル</button>
+    </div>
+    <div class="result-count"><strong id="count">12</strong> 件の実績</div>
+  </div>
+
+  <div class="works-grid" id="works-grid">
+
+    <a href="works-detail.html" class="work-card fade-in" data-cat="architecture">
+      <div class="work-img" style="background-image:url('https://images.unsplash.com/photo-1555636222-cae831e670b3?w=600&q=80')">
+        <span class="work-cat">建築工事</span>
+        <span class="work-year">2024</span>
+      </div>
+      <div class="work-info">
+        <div class="work-name">商業施設 新築工事（鉄骨造・地上3階）</div>
+        <div class="work-meta">
+          <span class="work-meta-item">📍 仙台市青葉区</span>
+          <span class="work-meta-item">📐 延床面積 2,400㎡</span>
+        </div>
+        <div class="work-desc">大手ゼネコンより受注した商業施設の躯体工事。工期短縮と安全管理を両立しながら高品質な施工を実現しました。</div>
+      </div>
+      <div class="work-card-footer">
+        <span class="work-link-text">詳細を見る</span>
+        <span class="work-link-arrow">›</span>
+      </div>
+    </a>
+
+    <a href="works-detail.html" class="work-card fade-in" data-cat="formwork">
+      <div class="work-img" style="background-image:url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=600&q=80')">
+        <span class="work-cat">型枠工事</span>
+        <span class="work-year">2024</span>
+      </div>
+      <div class="work-info">
+        <div class="work-name">RC造マンション 型枠・躯体工事（地上10階）</div>
+        <div class="work-meta">
+          <span class="work-meta-item">📍 仙台市太白区</span>
+          <span class="work-meta-item">📐 延床面積 4,800㎡</span>
+        </div>
+        <div class="work-desc">RC造10階建てマンションの型枠・躯体工事一式。精度の高い型枠施工でコンクリート品質を確保しました。</div>
+      </div>
+      <div class="work-card-footer">
+        <span class="work-link-text">詳細を見る</span>
+        <span class="work-link-arrow">›</span>
+      </div>
+    </a>
+
+    <a href="works-detail.html" class="work-card fade-in" data-cat="civil">
+      <div class="work-img" style="background-image:url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80')">
+        <span class="work-cat">土木工事</span>
+        <span class="work-year">2023</span>
+      </div>
+      <div class="work-info">
+        <div class="work-name">市道改良・舗装工事（延長2.1km）</div>
+        <div class="work-meta">
+          <span class="work-meta-item">📍 仙台市宮城野区</span>
+          <span class="work-meta-item">📐 延長 2,100m</span>
+        </div>
+        <div class="work-desc">市発注の道路改良工事。近隣への交通影響を最小限に抑えながら工期内に完工。地域インフラの整備に貢献しました。</div>
+      </div>
+      <div class="work-card-footer">
+        <span class="work-link-text">詳細を見る</span>
+        <span class="work-link-arrow">›</span>
+      </div>
+    </a>
+
+    <a href="works-detail.html" class="work-card fade-in" data-cat="architecture">
+      <div class="work-img" style="background-image:url('https://images.unsplash.com/photo-1590674899484-d5640e854abe?w=600&q=80')">
+        <span class="work-cat">建築工事</span>
+        <span class="work-year">2023</span>
+      </div>
+      <div class="work-info">
+        <div class="work-name">公共施設（区民センター）躯体工事</div>
+        <div class="work-meta">
+          <span class="work-meta-item">📍 仙台市若林区</span>
+          <span class="work-meta-item">📐 延床面積 1,800㎡</span>
+        </div>
+        <div class="work-desc">宮城県発注の公共施設建設工事。行政機関の厳格な品質・安全基準を満たし高評価をいただきました。</div>
+      </div>
+      <div class="work-card-footer">
+        <span class="work-link-text">詳細を見る</span>
+        <span class="work-link-arrow">›</span>
+      </div>
+    </a>
+
+    <a href="works-detail.html" class="work-card fade-in" data-cat="renovation">
+      <div class="work-img" style="background-image:url('https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600&q=80')">
+        <span class="work-cat">改修・リニューアル</span>
+        <span class="work-year">2023</span>
+      </div>
+      <div class="work-info">
+        <div class="work-name">オフィスビル 大規模改修工事（地上8階）</div>
+        <div class="work-meta">
+          <span class="work-meta-item">📍 仙台市青葉区</span>
+          <span class="work-meta-item">📐 延床面積 6,200㎡</span>
+        </div>
+        <div class="work-desc">築30年超のオフィスビル全面改修。テナントの営業を継続しながら段階的に施工。工程管理の精度が高く評価されました。</div>
+      </div>
+      <div class="work-card-footer">
+        <span class="work-link-text">詳細を見る</span>
+        <span class="work-link-arrow">›</span>
+      </div>
+    </a>
+
+    <a href="works-detail.html" class="work-card fade-in" data-cat="civil">
+      <div class="work-img" style="background-image:url('https://images.unsplash.com/photo-1582817954171-ae6b77e6b06f?w=600&q=80')">
+        <span class="work-cat">土木工事</span>
+        <span class="work-year">2022</span>
+      </div>
+      <div class="work-info">
+        <div class="work-name">橋梁補修・補強工事（PC橋）</div>
+        <div class="work-meta">
+          <span class="work-meta-item">📍 宮城県石巻市</span>
+          <span class="work-meta-item">📐 橋長 85m</span>
+        </div>
+        <div class="work-desc">老朽化したPC橋の補修・補強工事。交通規制を最小化しながら耐久性・安全性を回復させました。</div>
+      </div>
+      <div class="work-card-footer">
+        <span class="work-link-text">詳細を見る</span>
+        <span class="work-link-arrow">›</span>
+      </div>
+    </a>
+
+    <a href="works-detail.html" class="work-card fade-in" data-cat="architecture">
+      <div class="work-img" style="background-image:url('https://images.unsplash.com/photo-1531834685032-c34bf0d84c77?w=600&q=80')">
+        <span class="work-cat">建築工事</span>
+        <span class="work-year">2022</span>
+      </div>
+      <div class="work-info">
+        <div class="work-name">物流倉庫 新築工事（S造・地上2階）</div>
+        <div class="work-meta">
+          <span class="work-meta-item">📍 宮城県名取市</span>
+          <span class="work-meta-item">📐 延床面積 8,500㎡</span>
+        </div>
+        <div class="work-desc">大型物流倉庫の躯体・仕上げ工事一式。短工期での施工要求に応え、工期より2週間前倒しで完工しました。</div>
+      </div>
+      <div class="work-card-footer">
+        <span class="work-link-text">詳細を見る</span>
+        <span class="work-link-arrow">›</span>
+      </div>
+    </a>
+
+    <a href="works-detail.html" class="work-card fade-in" data-cat="formwork">
+      <div class="work-img" style="background-image:url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80&flip=h')">
+        <span class="work-cat">型枠工事</span>
+        <span class="work-year">2022</span>
+      </div>
+      <div class="work-info">
+        <div class="work-name">病院棟増築 RC躯体・型枠工事</div>
+        <div class="work-meta">
+          <span class="work-meta-item">📍 仙台市泉区</span>
+          <span class="work-meta-item">📐 延床面積 3,200㎡</span>
+        </div>
+        <div class="work-desc">病院施設の増築工事。既存棟への影響と衛生管理に最大限配慮した施工計画を立案・実行しました。</div>
+      </div>
+      <div class="work-card-footer">
+        <span class="work-link-text">詳細を見る</span>
+        <span class="work-link-arrow">›</span>
+      </div>
+    </a>
+
+    <a href="works-detail.html" class="work-card fade-in" data-cat="renovation">
+      <div class="work-img" style="background-image:url('https://images.unsplash.com/photo-1545558014-8692077e9b5c?w=600&q=80')">
+        <span class="work-cat">改修・リニューアル</span>
+        <span class="work-year">2021</span>
+      </div>
+      <div class="work-info">
+        <div class="work-name">学校施設 耐震改修工事</div>
+        <div class="work-meta">
+          <span class="work-meta-item">📍 宮城県大崎市</span>
+          <span class="work-meta-item">📐 延床面積 5,100㎡</span>
+        </div>
+        <div class="work-desc">小学校の耐震補強工事。夏季休暇期間を利用した短期集中施工で、児童の安全を確保しながら完工しました。</div>
+      </div>
+      <div class="work-card-footer">
+        <span class="work-link-text">詳細を見る</span>
+        <span class="work-link-arrow">›</span>
+      </div>
+    </a>
+
+    <a href="works-detail.html" class="work-card fade-in" data-cat="civil">
+      <div class="work-img" style="background-image:url('https://images.unsplash.com/photo-1567789884554-0b844b597180?w=600&q=80')">
+        <span class="work-cat">土木工事</span>
+        <span class="work-year">2021</span>
+      </div>
+      <div class="work-info">
+        <div class="work-name">河川護岸整備工事（延長1.5km）</div>
+        <div class="work-meta">
+          <span class="work-meta-item">📍 宮城県仙台市</span>
+          <span class="work-meta-item">📐 延長 1,500m</span>
+        </div>
+        <div class="work-desc">河川護岸の整備・強化工事。増水時の安全確保と周辺環境への影響を最小化した施工を実現しました。</div>
+      </div>
+      <div class="work-card-footer">
+        <span class="work-link-text">詳細を見る</span>
+        <span class="work-link-arrow">›</span>
+      </div>
+    </a>
+
+    <a href="works-detail.html" class="work-card fade-in" data-cat="architecture">
+      <div class="work-img" style="background-image:url('https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=600&q=80')">
+        <span class="work-cat">建築工事</span>
+        <span class="work-year">2021</span>
+      </div>
+      <div class="work-info">
+        <div class="work-name">工場建屋 新築工事（S造・大スパン）</div>
+        <div class="work-meta">
+          <span class="work-meta-item">📍 宮城県塩竈市</span>
+          <span class="work-meta-item">📐 延床面積 12,000㎡</span>
+        </div>
+        <div class="work-desc">製造業向け大型工場の建設工事。大スパン鉄骨造の高精度施工と安全管理を両立しました。</div>
+      </div>
+      <div class="work-card-footer">
+        <span class="work-link-text">詳細を見る</span>
+        <span class="work-link-arrow">›</span>
+      </div>
+    </a>
+
+    <a href="works-detail.html" class="work-card fade-in" data-cat="renovation">
+      <div class="work-img" style="background-image:url('https://images.unsplash.com/photo-1516156008625-3a9d6067fab5?w=600&q=80')">
+        <span class="work-cat">改修・リニューアル</span>
+        <span class="work-year">2020</span>
+      </div>
+      <div class="work-info">
+        <div class="work-name">マンション共用部・外壁全面改修</div>
+        <div class="work-meta">
+          <span class="work-meta-item">📍 仙台市宮城野区</span>
+          <span class="work-meta-item">📐 延床面積 7,800㎡</span>
+        </div>
+        <div class="work-desc">築25年のマンション大規模修繕工事。居住者対応を丁寧に行いながら建物の美観と耐久性を回復しました。</div>
+      </div>
+      <div class="work-card-footer">
+        <span class="work-link-text">詳細を見る</span>
+        <span class="work-link-arrow">›</span>
+      </div>
+    </a>
+
+  </div><!-- /works-grid -->
+
+  <div class="pagination fade-in">
+    <button class="page-btn active">1</button>
+    <button class="page-btn">2</button>
+    <button class="page-btn">3</button>
+    <span class="page-dots">…</span>
+    <button class="page-btn">8</button>
+    <button class="page-btn">›</button>
+  </div>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">
+          <div class="logo-mark">銅</div>
+          <div class="logo-text">
+            <span class="ja">銅谷建設株式会社</span>
+            <span class="en">Douya Kensetsu Co., Ltd.</span>
+          </div>
+        </a>
+        <p class="footer-tagline">確かな技術で、子どもの未来を応援します。<br />安全・品質・環境に真摯に向き合い、<br />宮城の建設インフラを支え続けます。</p>
+      </div>
+      <div>
+        <div class="footer-col-title">Company</div>
+        <div class="footer-links">
+          <a href="index.html#strengths">強み</a>
+          <a href="works.html">施工実績</a>
+          <a href="index.html#services">事業内容</a>
+          <a href="index.html#about">会社概要</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Information</div>
+        <div class="footer-links">
+          <a href="news.html">ニュース</a>
+          <a href="index.html#recruit">採用情報</a>
+          <a href="#">SDGsへの取り組み</a>
+          <a href="#">プライバシーポリシー</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Contact</div>
+        <div class="footer-links">
+          <a href="tel:022-262-5568">022-262-5568</a>
+          <a href="index.html#contact">お問い合わせ</a>
+          <a href="#">アクセス</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 銅谷建設株式会社 All Rights Reserved.</span>
+      <span>宮城県仙台市青葉区</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Filter
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const cards = document.querySelectorAll('.work-card');
+  const countEl = document.getElementById('count');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.dataset.filter;
+      let visible = 0;
+      cards.forEach(card => {
+        const match = filter === 'all' || card.dataset.cat === filter;
+        card.style.display = match ? 'block' : 'none';
+        if (match) visible++;
+      });
+      countEl.textContent = visible;
+    });
+  });
+
+  // Scroll fade
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.06 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  // Stagger cards
+  document.querySelectorAll('.work-card').forEach((el, i) => {
+    el.style.transitionDelay = `${(i % 3) * 0.08}s`;
+  });
+</script>
+</body>
+</html>

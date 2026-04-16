@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>令和7年度 安全衛生大会に参加 | ニュース | 銅谷建設株式会社</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Montserrat:wght@300;400;600;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --color-bg: #ffffff;
+      --color-surface: #f4f7fb;
+      --color-border: rgba(0,0,0,0.08);
+      --color-primary: #1a5fb8;
+      --color-primary-light: #2470d4;
+      --color-text: #1a2433;
+      --color-text-sub: #5a6a80;
+      --font-ja: 'Noto Sans JP', sans-serif;
+      --font-en: 'Montserrat', sans-serif;
+      --radius: 12px;
+      --transition: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--color-bg); color: var(--color-text); font-family: var(--font-ja); line-height: 1.7; overflow-x: hidden; }
+
+    /* HEADER */
+    #site-header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 0 48px; height: 72px;
+      display: flex; align-items: center; justify-content: space-between;
+      background: rgba(255,255,255,0.95); backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--color-border);
+      box-shadow: 0 1px 20px rgba(0,0,0,0.06);
+    }
+    .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .logo-mark { width: 40px; height: 40px; background: var(--color-primary); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-family: var(--font-en); font-weight: 900; font-size: 18px; color: #fff; }
+    .logo-text .ja { font-size: 15px; font-weight: 700; color: var(--color-text); display: block; }
+    .logo-text .en { font-size: 10px; font-family: var(--font-en); color: var(--color-text-sub); letter-spacing: 0.15em; text-transform: uppercase; display: block; }
+    nav { display: flex; align-items: center; gap: 32px; }
+    nav a { font-size: 12px; font-family: var(--font-en); font-weight: 600; color: #5a6a80; text-decoration: none; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s; }
+    nav a:hover, nav a.active { color: var(--color-primary); }
+    .header-cta { background: var(--color-primary); color: #fff !important; padding: 10px 22px; border-radius: 6px; }
+
+    /* LAYOUT */
+    .detail-layout {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 100px 48px 120px;
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 64px;
+      align-items: start;
+    }
+
+    /* BREADCRUMB */
+    .breadcrumb { display: flex; align-items: center; gap: 8px; margin-bottom: 24px; }
+    .breadcrumb a { font-size: 12px; color: var(--color-text-sub); text-decoration: none; font-family: var(--font-en); transition: color 0.2s; }
+    .breadcrumb a:hover { color: var(--color-primary); }
+    .breadcrumb span { font-size: 12px; color: var(--color-text-sub); }
+
+    /* ARTICLE HEADER */
+    .article-header { margin-bottom: 40px; }
+    .article-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+    .article-date { font-family: var(--font-en); font-size: 13px; color: var(--color-text-sub); }
+    .news-tag {
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 3px 12px; border-radius: 4px;
+      font-size: 11px; font-weight: 700;
+    }
+    .news-tag.safety { background: rgba(220,60,60,0.08); color: #c73535; }
+    .news-tag.info { background: rgba(26,95,184,0.08); color: var(--color-primary); }
+    .news-tag.award { background: rgba(14,165,233,0.08); color: #0284c7; }
+    .news-tag.recruit { background: rgba(34,197,94,0.08); color: #15803d; }
+    .news-tag.event { background: rgba(168,85,247,0.08); color: #7c3aed; }
+
+    .article-title {
+      font-size: clamp(22px, 3vw, 36px);
+      font-weight: 900;
+      line-height: 1.3;
+      margin-bottom: 0;
+    }
+
+    /* EYE CATCH */
+    .article-eyecatch {
+      width: 100%;
+      aspect-ratio: 16/9;
+      border-radius: var(--radius);
+      overflow: hidden;
+      margin-bottom: 48px;
+    }
+    .article-eyecatch img { width: 100%; height: 100%; object-fit: cover; }
+
+    /* ARTICLE BODY */
+    .article-body { font-size: 15px; line-height: 2; color: var(--color-text); font-weight: 300; }
+    .article-body h2 {
+      font-size: 20px; font-weight: 700; margin: 48px 0 20px;
+      padding-left: 16px; border-left: 4px solid var(--color-primary);
+      line-height: 1.4;
+    }
+    .article-body h3 { font-size: 17px; font-weight: 700; margin: 32px 0 14px; }
+    .article-body p { margin-bottom: 24px; }
+    .article-body p:last-child { margin-bottom: 0; }
+
+    .article-body ul { margin: 0 0 24px 20px; }
+    .article-body ul li { margin-bottom: 8px; padding-left: 4px; }
+
+    .article-body .highlight-box {
+      background: rgba(26,95,184,0.05);
+      border: 1px solid rgba(26,95,184,0.15);
+      border-radius: var(--radius);
+      padding: 24px 28px;
+      margin: 32px 0;
+    }
+    .article-body .highlight-box p { margin-bottom: 0; font-weight: 400; }
+
+    .article-photo-row {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+      margin: 32px 0;
+    }
+    .article-photo {
+      aspect-ratio: 4/3; border-radius: 8px; overflow: hidden;
+    }
+    .article-photo img { width: 100%; height: 100%; object-fit: cover; }
+    .article-caption { font-size: 12px; color: var(--color-text-sub); margin-top: 6px; text-align: center; }
+
+    /* AWARD BADGE */
+    .award-banner {
+      display: flex; align-items: center; gap: 20px;
+      background: linear-gradient(135deg, #1a5fb8, #0ea5e9);
+      border-radius: var(--radius); padding: 24px 28px; margin: 40px 0;
+      color: #fff;
+    }
+    .award-icon { font-size: 40px; flex-shrink: 0; }
+    .award-title { font-size: 13px; opacity: 0.8; margin-bottom: 4px; }
+    .award-name { font-size: 18px; font-weight: 700; }
+
+    /* SHARE */
+    .article-footer {
+      margin-top: 48px; padding-top: 32px;
+      border-top: 1px solid var(--color-border);
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;
+    }
+    .share-label { font-size: 12px; color: var(--color-text-sub); font-family: var(--font-en); letter-spacing: 0.1em; text-transform: uppercase; }
+    .share-btns { display: flex; gap: 8px; }
+    .share-btn {
+      padding: 8px 16px; border-radius: 6px; border: 1px solid var(--color-border);
+      font-size: 12px; font-weight: 600; text-decoration: none; color: var(--color-text-sub);
+      transition: all 0.2s; display: flex; align-items: center; gap: 6px;
+    }
+    .share-btn:hover { border-color: var(--color-primary); color: var(--color-primary); }
+
+    /* PREV/NEXT NAV */
+    .article-nav {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+      margin-top: 40px;
+    }
+    .nav-card {
+      padding: 20px 22px; border: 1px solid var(--color-border);
+      border-radius: var(--radius); text-decoration: none; color: var(--color-text);
+      transition: var(--transition); display: flex; flex-direction: column; gap: 6px;
+    }
+    .nav-card:hover { border-color: rgba(26,95,184,0.3); background: var(--color-surface); }
+    .nav-card.next { text-align: right; }
+    .nav-dir { font-size: 11px; font-family: var(--font-en); font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-text-sub); }
+    .nav-title { font-size: 13px; font-weight: 600; line-height: 1.4; }
+
+    /* SIDEBAR */
+    .sidebar { position: sticky; top: 100px; }
+    .sidebar-block { margin-bottom: 24px; }
+    .sidebar-title { font-size: 11px; font-family: var(--font-en); font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--color-primary); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid var(--color-border); }
+
+    .recent-list { display: flex; flex-direction: column; gap: 2px; }
+    .recent-item {
+      display: flex; align-items: flex-start; gap: 12px;
+      padding: 12px; border-radius: 8px; text-decoration: none;
+      color: var(--color-text); transition: background 0.2s;
+    }
+    .recent-item:hover { background: var(--color-surface); }
+    .recent-date { font-family: var(--font-en); font-size: 11px; color: var(--color-text-sub); white-space: nowrap; padding-top: 2px; }
+    .recent-title { font-size: 13px; font-weight: 500; line-height: 1.5; }
+
+    .tag-cloud { display: flex; flex-wrap: wrap; gap: 6px; }
+    .tag-cloud a {
+      display: inline-block; padding: 5px 12px; border-radius: 100px;
+      border: 1px solid var(--color-border); font-size: 12px; color: var(--color-text-sub);
+      text-decoration: none; transition: all 0.2s;
+    }
+    .tag-cloud a:hover { border-color: var(--color-primary); color: var(--color-primary); }
+
+    /* FADE */
+    .fade-in { opacity: 0; transform: translateY(16px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    footer { background: #0f1e35; padding: 60px 48px 40px; border-top: 1px solid rgba(255,255,255,0.05); }
+    .footer-inner { max-width: 1200px; margin: 0 auto; }
+    .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,0.07); margin-bottom: 32px; }
+    .footer-brand .logo { margin-bottom: 16px; }
+    .footer-brand .logo .ja { color: #ffffff; }
+    .footer-brand .logo .en { color: #8ab0cc; }
+    .footer-tagline { font-size: 13px; color: #8ab0cc; line-height: 1.8; font-weight: 300; }
+    .footer-col-title { font-size: 11px; font-family: var(--font-en); font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: #8ab0cc; margin-bottom: 16px; }
+    .footer-links { display: flex; flex-direction: column; gap: 10px; }
+    .footer-links a { font-size: 13px; color: #8ab0cc; text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: #7dd3fc; }
+    .footer-bottom { display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: #3a5570; }
+    @media (max-width: 900px) { .footer-top { grid-template-columns: 1fr 1fr; } }
+
+    @media (max-width: 900px) {
+      header { padding: 0 20px; }
+      nav { display: none; }
+      .detail-layout { grid-template-columns: 1fr; padding: 80px 20px 80px; gap: 40px; }
+      .sidebar { position: static; }
+      .article-photo-row { grid-template-columns: 1fr; }
+      .article-nav { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<header id="site-header">
+  <a href="index.html" class="logo">
+    <div class="logo-mark">銅</div>
+    <div class="logo-text">
+      <span class="ja">銅谷建設株式会社</span>
+      <span class="en">Douya Kensetsu Co., Ltd.</span>
+    </div>
+  </a>
+  <nav>
+    <a href="index.html#strengths">強み</a>
+    <a href="works.html">施工実績</a>
+    <a href="index.html#services">事業内容</a>
+    <a href="news.html" class="active">ニュース</a>
+    <a href="index.html#about">会社概要</a>
+    <a href="index.html#recruit">採用</a>
+    <a href="index.html#contact" class="header-cta">お問い合わせ</a>
+  </nav>
+</header>
+
+<div class="detail-layout">
+  <!-- ARTICLE -->
+  <article>
+    <div class="breadcrumb fade-in">
+      <a href="index.html">Home</a>
+      <span>/</span>
+      <a href="news.html">ニュース</a>
+      <span>/</span>
+      <span>令和7年度 安全衛生大会に参加・発表</span>
+    </div>
+
+    <div class="article-header fade-in">
+      <div class="article-meta">
+        <span class="article-date">2026年2月15日</span>
+        <span class="news-tag safety">安全</span>
+      </div>
+      <h1 class="article-title">令和7年度 安全衛生大会に参加・発表を行いました</h1>
+    </div>
+
+    <div class="article-eyecatch fade-in">
+      <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1000&q=80" alt="安全衛生大会の様子" />
+    </div>
+
+    <div class="article-body fade-in">
+      <p>
+        2026年2月15日（土）、宮城県建設業協会主催の「令和7年度 安全衛生大会」に参加いたしました。
+        仙台市内の会場には県内の建設会社・協力会社から約300名が参集し、
+        本年度の安全活動の総括と翌年度の取り組みについて活発な意見交換が行われました。
+      </p>
+
+      <h2>当社の発表内容</h2>
+      <p>
+        本年度は「現場起点のヒヤリハット共有システムの構築と活用」と題し、
+        弊社が2024年より導入したデジタルヒヤリハット報告システムの効果と運用事例を発表しました。
+      </p>
+      <p>
+        従来の紙帳票による報告から、スマートフォンアプリを活用したリアルタイム報告・共有体制に移行したことで、
+        ヒヤリハット報告件数が約2.3倍に増加。収集したデータを月次安全委員会で分析・フィードバックする
+        仕組みを整備し、危険の「見える化」と早期対応を実現した事例をご紹介しました。
+      </p>
+
+      <div class="highlight-box">
+        <p>
+          💡 <strong>発表のポイント：</strong>ヒヤリハット報告のデジタル化により、報告ハードルが下がり件数が増加。
+          蓄積データを分析することで類似事故の未然防止につなげています。
+        </p>
+      </div>
+
+      <h2>現場写真</h2>
+      <div class="article-photo-row">
+        <div>
+          <div class="article-photo">
+            <img src="https://images.unsplash.com/photo-1590674899484-d5640e854abe?w=500&q=80" alt="発表の様子" />
+          </div>
+          <p class="article-caption">▲ 大会での事例発表の様子</p>
+        </div>
+        <div>
+          <div class="article-photo">
+            <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=500&q=80" alt="表彰式" />
+          </div>
+          <p class="article-caption">▲ 安全優良業者 表彰式</p>
+        </div>
+      </div>
+
+      <h2>安全優良業者として表彰</h2>
+      <p>
+        本大会では、日頃の安全活動が認められ、宮城県建設業協会より
+        「安全優良業者」として表彰をいただきました。
+        3年連続での受賞となり、社員一同大きな励みとなっています。
+      </p>
+
+      <div class="award-banner">
+        <span class="award-icon">🏆</span>
+        <div>
+          <div class="award-title">宮城県建設業協会</div>
+          <div class="award-name">令和7年度 安全優良業者 表彰（3年連続）</div>
+        </div>
+      </div>
+
+      <h2>今後の取り組み</h2>
+      <p>
+        令和8年度は「ゼロ災害」の継続を最優先目標として掲げ、以下の取り組みを強化していきます。
+      </p>
+      <ul>
+        <li>デジタルヒヤリハットシステムの全現場展開（2026年4月〜）</li>
+        <li>VR技術を活用した新入社員向け安全体感教育の導入</li>
+        <li>協力会社との合同安全パトロールの月次実施</li>
+        <li>健康管理アプリを活用した熱中症・メンタルヘルス対策の強化</li>
+      </ul>
+      <p>
+        引き続き「安全なくして仕事なし」の理念のもと、全社員・全現場での安全活動に取り組んでまいります。
+      </p>
+    </div>
+
+    <div class="article-footer fade-in">
+      <a href="news.html" style="display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--color-primary);text-decoration:none;border:1px solid rgba(26,95,184,0.2);padding:10px 20px;border-radius:6px;font-family:var(--font-en);letter-spacing:0.08em;text-transform:uppercase;">
+        ← ニュース一覧へ
+      </a>
+      <div style="display:flex;align-items:center;gap:12px;">
+        <span class="share-label">Share</span>
+        <div class="share-btns">
+          <a href="#" class="share-btn">X (Twitter)</a>
+          <a href="#" class="share-btn">Facebook</a>
+          <a href="#" class="share-btn">LINE</a>
+        </div>
+      </div>
+    </div>
+
+    <nav class="article-nav fade-in">
+      <a href="news-detail.html" class="nav-card prev">
+        <span class="nav-dir">← Prev</span>
+        <span class="nav-title">2026年 新年のご挨拶</span>
+      </a>
+      <a href="news-detail.html" class="nav-card next">
+        <span class="nav-dir">Next →</span>
+        <span class="nav-title">年末年始の営業について（12/28〜1/5 休業）</span>
+      </a>
+    </nav>
+  </article>
+
+  <!-- SIDEBAR -->
+  <div class="sidebar fade-in">
+    <div class="sidebar-block">
+      <div class="sidebar-title">Recent News</div>
+      <div class="recent-list">
+        <a href="news-detail.html" class="recent-item">
+          <span class="recent-date">2026.02.15</span>
+          <span class="recent-title">令和7年度 安全衛生大会に参加・発表を行いました</span>
+        </a>
+        <a href="news-detail.html" class="recent-item">
+          <span class="recent-date">2026.01.06</span>
+          <span class="recent-title">2026年 新年のご挨拶</span>
+        </a>
+        <a href="news-detail.html" class="recent-item">
+          <span class="recent-date">2025.12.20</span>
+          <span class="recent-title">年末年始の営業について</span>
+        </a>
+        <a href="news-detail.html" class="recent-item">
+          <span class="recent-date">2025.11.10</span>
+          <span class="recent-title">技術研修会に講師として登壇しました</span>
+        </a>
+        <a href="news-detail.html" class="recent-item">
+          <span class="recent-date">2025.10.08</span>
+          <span class="recent-title">第3回 社内安全衛生競技大会を開催しました</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="sidebar-block">
+      <div class="sidebar-title">Tags</div>
+      <div class="tag-cloud">
+        <a href="#">安全衛生</a>
+        <a href="#">KY活動</a>
+        <a href="#">ヒヤリハット</a>
+        <a href="#">表彰</a>
+        <a href="#">BCP</a>
+        <a href="#">健康経営</a>
+        <a href="#">採用</a>
+        <a href="#">研修</a>
+      </div>
+    </div>
+
+    <div style="background:var(--color-primary);border-radius:var(--radius);padding:24px;text-align:center;">
+      <p style="font-size:13px;color:rgba(255,255,255,0.85);margin-bottom:14px;line-height:1.7;">取引・施工のご相談は<br />お気軽にどうぞ</p>
+      <a href="tel:022-262-5568" style="display:block;background:#fff;color:var(--color-primary);font-weight:700;font-size:13px;padding:11px;border-radius:8px;text-decoration:none;margin-bottom:8px;">📞 022-262-5568</a>
+      <a href="mailto:info@douyakensetsu.co.jp" style="display:block;background:rgba(255,255,255,0.15);color:#fff;font-weight:600;font-size:13px;padding:11px;border-radius:8px;text-decoration:none;">✉️ メールで相談</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">
+          <div class="logo-mark">銅</div>
+          <div class="logo-text">
+            <span class="ja">銅谷建設株式会社</span>
+            <span class="en">Douya Kensetsu Co., Ltd.</span>
+          </div>
+        </a>
+        <p class="footer-tagline">確かな技術で、子どもの未来を応援します。<br />安全・品質・環境に真摯に向き合い、<br />宮城の建設インフラを支え続けます。</p>
+      </div>
+      <div>
+        <div class="footer-col-title">Company</div>
+        <div class="footer-links">
+          <a href="index.html#strengths">強み</a>
+          <a href="works.html">施工実績</a>
+          <a href="index.html#services">事業内容</a>
+          <a href="index.html#about">会社概要</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Information</div>
+        <div class="footer-links">
+          <a href="news.html">ニュース</a>
+          <a href="index.html#recruit">採用情報</a>
+          <a href="#">SDGsへの取り組み</a>
+          <a href="#">プライバシーポリシー</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Contact</div>
+        <div class="footer-links">
+          <a href="tel:022-262-5568">022-262-5568</a>
+          <a href="index.html#contact">お問い合わせ</a>
+          <a href="#">アクセス</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 銅谷建設株式会社 All Rights Reserved.</span>
+      <span>宮城県仙台市青葉区</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.06 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
